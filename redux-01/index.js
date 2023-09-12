@@ -53,7 +53,7 @@ console.log("Initial state :", store.getState());
 // Registers listener via .subscribe(listener)
 const unsubcribe = store.subscribe(() => {
     console.log("Update state :", store.getState());
-    console.log(store.getState().cakes);
+    console.log(store.getState().cakes); // <-- log 'slice'
 });
 // In this example, the subscribe method listens for changes in the state of the cakes "slice" of the store.
 // When actions are dispatched, the subscriber callback logs the updated state to the console.
