@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { selectAllPosts } from "./postsSlice";
 import PostAuthor from "./PostAuthor";
+import TimeAgo from "./TimeAgo";
 
 const PostsList = () => {
     const posts = useSelector(selectAllPosts); // <-- check here is different from the previous practice
@@ -13,6 +14,7 @@ const PostsList = () => {
             {/* Use substring so that will show only first 100 charactersif the content is too long */}
             <p className="postCredit">
                 <PostAuthor userId={eachPost.userId} />
+                <TimeAgo timestamp={eachPost.date} />
             </p>
         </article>
     ));
