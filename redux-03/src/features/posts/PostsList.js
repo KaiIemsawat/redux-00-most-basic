@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { selectAllPosts } from "./postsSlice";
+import PostAuthor from "./PostAuthor";
 
 const PostsList = () => {
     const posts = useSelector(selectAllPosts); // <-- check here is different from the previous practice
@@ -10,6 +11,9 @@ const PostsList = () => {
             <h3>{eachPost.title}</h3>
             <p>{eachPost.content.substring(0, 100)}</p>
             {/* Use substring so that will show only first 100 charactersif the content is too long */}
+            <p className="postCredit">
+                <PostAuthor userId={eachPost.userId} />
+            </p>
         </article>
     ));
 

@@ -25,12 +25,13 @@ const postsSlice = createSlice({
             //     state.push(action.payload);
             // },
             // The `prepare` function defines how the action payload should be prepared.
-            prepare(title, content) {
+            prepare(title, content, userId) {
                 return {
                     payload: {
                         id: nanoid(),
                         title,
                         content,
+                        userId,
                     },
                 };
             },
